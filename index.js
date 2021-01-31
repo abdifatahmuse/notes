@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 // Routes
 import noteRoutes from './routes/notesRouter.js';
 import qrCodeRoutes from './routes/qrCodeRouter.js';
+import usersRoutes from './routes/userRouter.js';
 
 // Express 
 const app = express();
@@ -34,6 +35,7 @@ app.use(cors());
 // All Routes
 app.use('/notes', noteRoutes);
 app.use('/qrCode', qrCodeRoutes);
+app.use('/users', usersRoutes);
 
 // this is localhost:5000/
 app.get('/', (req, res) => res.send(`Hello From Notes and QRcode API ${PORT}`));
