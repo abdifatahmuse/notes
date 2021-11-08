@@ -12,7 +12,7 @@ export const login = async (req, res) => {
     try {
         const existingUser = await User.findOne({ email });
 
-        if (!existingUser) return res.status(404).json({ message: "User does't exist." });
+        if (!existingUser) return res.status(404).json({ message: "User does't exist." }); // you don't have account, please Register | Not Authentroized
 
         const ispasswordcorrent = await bcrypt.compare(password, existingUser.password);
 
